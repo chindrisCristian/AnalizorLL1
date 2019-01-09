@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MiniInterpreterUI">
+
+    <Color x:Key="BackgroundLight">#F0FFFF</Color>
+    <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}" />
+    
+    <Color x:Key="BackgroundLessLight">#FFDDCC</Color>
+    <SolidColorBrush x:Key="BackgroundLessLightBrush" Color="{StaticResource BackgroundLessLight}" />
+
+    <Color x:Key="BackgroundTextBoxLight">#F0F8FF</Color>
+    <SolidColorBrush x:Key="BackgroundTextBoxLightBrush" Color="{StaticResource BackgroundTextBoxLight}" />
+
+    <Color x:Key="BackgroundDark">#2F4F4F</Color>
+    <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDark}" />
+
+    <Color x:Key="BackgroundTextBoxDark">#708090</Color>
+    <SolidColorBrush x:Key="BackgroundDarkTextBoxBrush" Color="{StaticResource BackgroundTextBoxDark}" />
+
+    <Color x:Key="ForegroundLight">#FAEBD7</Color>
+    <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}" />
+
+    <Color x:Key="ForegroundDark">#778899</Color>
+    <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDark}" />
+    
+
+</ResourceDictionary>

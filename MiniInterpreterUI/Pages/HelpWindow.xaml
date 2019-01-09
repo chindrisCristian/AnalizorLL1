@@ -1,0 +1,70 @@
+﻿<Window x:Class="MiniInterpreterUI.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniInterpreterUI"
+        mc:Ignorable="d"
+        Title="Help Window" Height="400" Width="800">
+    
+    <Grid Background="{StaticResource BackgroundDarkBrush}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+            
+            <StackPanel Orientation="Vertical">
+               
+                <TextBlock FontSize="{StaticResource FontSizeRegular}"
+                       FontFamily="{StaticResource LatoRegular}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                           TextWrapping="Wrap"
+                           MaxWidth="600">
+                
+                <LineBreak/>
+                <Span TextDecorations="Underline"
+                      FontSize="{StaticResource FontSizeXLarge}"
+                      FontFamily="{StaticResource LatoBold}">
+                    General
+                </Span>
+                    <LineBreak/>
+                    
+                Aplicatia trebuie sa primeasca ca si intrare definita gramaticii corespunzatoare limbajului pentru care trebuie<LineBreak/>
+                generat analizorul sintactic LL(1).
+                <LineBreak/>
+                <LineBreak/>
+                Daca datele sunt introduse manual in casutele din UI ordinea este aferenta label-urilor de acolo.<LineBreak/>
+                Daca acestei sunt introduse dintr-un fisier, formatul acestuia trebuie sa fie astfel:<LineBreak/><LineBreak/>
+                Simbolul de start<LineBreak/>
+                Mulţimea neterminalelor separate printr-un separator oarecare<LineBreak/>
+                Mulţimea terminalelor separate printr-un separator oarecare<LineBreak/>
+                Numărul regulilor de producţie<LineBreak/>
+                Regulile de producţie sub forma neterminal:succesiune de terminale şi neterminale separate prin spaţii<LineBreak/>
+                <LineBreak/>
+                <LineBreak/>
+                
+                
+                <Span TextDecorations="Underline"
+                      FontSize="{StaticResource FontSizeXLarge}"
+                      FontFamily="{StaticResource LatoBold}">
+                    De retinut!
+                </Span>
+                <LineBreak/>
+                Este important ca in scrierea regulilor de productie sa se respecte succesiunea ParteStanga:ParteDreapta, unde<LineBreak/>
+                partea dreapta poate contine orice forma propozitionala separata prin spatiu.<LineBreak/>
+                Daca forma propozitionala este simbolul epsilon, atunci, dupa ":" nu se mai pune nimic.
+                <LineBreak/>
+                <LineBreak/>
+                Neterminalele nu trebuie sa contina simboluri de tipul: -, +, &lt;, &gt;, &amp;, ", ', sau orice alt simbol special.
+                <LineBreak/>
+                <LineBreak/>
+                Pentru inputul in cazul in care dorim sa trimitem argumente pentru aplicatia rezultata, argumentele vor fi introduse in campul input, cu spatiu intre ele.<LineBreak/>
+                Spre exemplu:<LineBreak/>
+                a * ( a + a ) $
+                <LineBreak/>
+                <LineBreak/>
+                La finalul introducerii simbolurilor pentru propozitia trimisa ca input este absolut necesar simbolul "$".
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

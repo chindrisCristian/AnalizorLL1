@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="MiniInterpreterUI.AfisareGramaticaLL"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniInterpreterUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+                FontFamily="{StaticResource LatoRegular}"
+             FontSize="{StaticResource FontSizeLarge}"
+             Foreground="{StaticResource ForegroundLightBrush}">
+
+    <Grid Background="{StaticResource BackgroundDarkBrush}">
+        <!--#region Data definiton -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion -->
+
+        <ScrollViewer Grid.Column="1"
+                      Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical">
+                <!--#region Afisare gramatica noua -->
+                <Border BorderThickness="2"
+                    BorderBrush="AntiqueWhite">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Forma gramaticii LL(1)"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="{StaticResource LatoBold}"
+                                   FontSize="{StaticResource FontSizeXLarge}"
+                                   TextDecorations="Underline"/>
+                        
+                        <TextBlock Text="{Binding FormaGramaticaNoua}"
+                                   Margin="10"
+                                   MaxWidth="350"
+                                   TextWrapping="Wrap"/>
+                        
+                    </StackPanel>
+                </Border>
+                <!--#endregion-->
+
+                <!--#region Afisare simboli directori -->
+                <Border BorderThickness="2"
+                        BorderBrush="AntiqueWhite">
+                    
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Multimile de simboli directori"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="{StaticResource LatoBold}"
+                                   FontSize="{StaticResource FontSizeXLarge}"
+                                   TextDecorations="Underline"/>
+                        
+                        <TextBlock Text="{Binding SimboliDirectori}"
+                                   Margin="20"/>
+                    </StackPanel>
+                </Border>
+                <!--#endregion-->
+            </StackPanel>
+        </ScrollViewer>
+
+        <!--#region Tabela de analiza sintactica -->
+        <DataGrid Grid.Column="2"
+                  Grid.Row="1"
+                  x:Name="tasDataGrid"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="Bisque"
+                  AutoGeneratingColumn="TasDataGrid_AutoGeneratingColumn"
+                  Background="Transparent"
+                  ItemsSource="{Binding TabelAnalizaSintatica}"/>
+
+        <!--#endregion-->
+
+        <Button Content="Genereaza Cod"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                Command="{Binding InterpreteazaGramaticaCMD}"/>
+    </Grid>
+</UserControl>
